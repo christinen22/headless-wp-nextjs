@@ -1,0 +1,23 @@
+.site-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.site-info {
+    flex-basis: calc(( 100 / ( var(--cols) / 8 ) ) * 1%);
+    flex-grow: 0;
+    max-width: calc(( 100 / ( var(--cols) / 6 ) ) *1%);
+    padding-left: calc(var(--gap-grid) / 2);
+    padding-right: calc(var(--gap-grid) /2);
+    margin-right: 2rem;
+    padding-left: 5rem;
+}
+
+.site-contact {
+    flex-basis: calc(( 100 / ( var(--cols) / 4 ) ) * 1%);
+    flex-grow: 0;
+    max-width: calc(( 100 / ( var(--cols) / 4 ) ) *1%);
+    padding-left: calc(var(--gap-grid) / 2);
+    padding-right: calc(var(--gap-grid) /2);
+}

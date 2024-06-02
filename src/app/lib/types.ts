@@ -12,8 +12,33 @@ export interface HeroBlock {
     };
 }
 
+export interface MediaWithTextBlock {
+    __typename: 'AcfMediaWithText';
+    mediaWithText: {
+        image: {
+            node: {
+                mediaItemUrl: string;
+            }
+        }
+        text: string,
+        title: string
+    }
+};
+
+export interface PageHeaderBlock {
+    __typename: 'AcfPageHeader';
+    pageHeader: {
+        image: {
+            node: {
+                mediaItemUrl: string;
+            }
+        }
+        title: string
+    }
+}
+
 // Extend this type with more block types
-export type EditorBlock = HeroBlock; /*| TextBlock*/
+export type EditorBlock = HeroBlock | MediaWithTextBlock | PageHeaderBlock;
 
 export interface Page {
     title: string;
@@ -24,5 +49,22 @@ export interface Page {
 export interface PageProps {
     params: {
         slug: string;
+    };
+}
+
+export interface MenuItem {
+    label: string;
+    path: string;
+}
+
+export interface Menu {
+    menuItems: {
+        nodes: MenuItem[];
+    };
+}
+
+export interface MenusData {
+    menus: {
+        nodes: Menu[];
     };
 }

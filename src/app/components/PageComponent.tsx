@@ -14,12 +14,9 @@ const PageComponent: React.FC<{ slug: string }> = ({ slug }) => {
     const fetchData = async () => {
       try {
         const pageData = await fetchPageBySlug(slug);
-        console.log("Fetched page data:", pageData); // Inspect the fetched data
 
         // Log each block's structure
-        pageData.editorBlocks.forEach((block: any, index: number) => {
-          console.log(`Block ${index}:`, block);
-        });
+        pageData.editorBlocks.forEach((block: any, index: number) => {});
 
         setPage(pageData);
       } catch (error) {

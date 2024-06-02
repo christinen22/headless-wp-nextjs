@@ -1,0 +1,58 @@
+/* MIXINS */
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--gap-container);
+    padding-right: var(--gap-container);
+    width: 100%;
+}
+
+.section {
+    padding-top: var(--gap-section);
+}
+
+/* Flex grid utility */
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--gap-grid) / 2 * -1);
+    margin-right: calc(var(--gap-grid) / 2 * -1);
+    width: calc(100% + var(--gap-grid));
+}
+
+.flex-grid--align {
+    align-items: var(--flex-align, flex-start);
+}
+
+.flex-grid--justify {
+    justify-content: var(--flex-justify, flex-start);
+}
+
+/* Flex column utility */
+.flex-column {
+    flex-grow: 0;
+    padding-left: calc(var(--gap-grid) / 2);
+    padding-right: calc(var(--gap-grid) / 2);
+}
+
+.flex-column--col {
+    flex-basis: calc((100 / var(--flex-cols, 12)) * var(--flex-col, 12));
+    max-width: calc((100 / var(--flex-cols, 12)) * var(--flex-col, 12));
+}
+
+/* Flex column offset utility */
+.flex-column-offset {
+    margin-left: calc((100 / var(--flex-cols, 12)) * var(--flex-offset, 0));
+}
+
+
+
+
+    /* BREAKPOINTS */
+    @custom-media --bp-tiny ( min-width 576 );
+    @custom-media --bp-small ( min-width 768px );
+    @custom-media --bp-medium ( min-width 992px );
+    @custom-media --bp-large ( min-width 1280px );
+    @custom-media --bp-xlarge ( min-width 1440px );
+    @custom-media --bp-huge ( min-width 1680px );

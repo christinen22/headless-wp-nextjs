@@ -21,6 +21,27 @@ export const WORDPRESS_GET_PAGE_BY_SLUG =
             }
           }
         }
+        ... on AcfMediaWithText {
+          mediaWithText {
+            image {
+              node {
+                mediaItemUrl
+              }
+            }
+            text
+            title
+          }
+        }
+        ... on AcfPageHeader {
+          pageHeader {
+            image {
+              node {
+                mediaItemUrl
+              }
+            }
+            title
+          }
+        }
       }
     }
   }
@@ -45,7 +66,6 @@ export const fetchPageBySlug = async (slug: string) => {
     }
 
     const query = await response.json();
-    console.log('Query response:', query);
 
     return query?.data.pageBy;
   } catch (error) {
