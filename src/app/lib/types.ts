@@ -21,7 +21,8 @@ export interface MediaWithTextBlock {
             }
         }
         text: string,
-        title: string
+        title: string,
+        url: string,
     }
 };
 

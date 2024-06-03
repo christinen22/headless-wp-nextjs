@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Open+Sans:wght@300&family=Playfair+Display:ital,wght@1,500&display=swap');
+
+:root {
+  --fonts-primary: "Open Sans", sans-serif;
+  --fonts-secondary: "Roboto", sans-serif;
+
+  /* GAPS */
+  --baseline-unit: 0.25rem;
+
+  --gap: calc(var(--baseline-unit) * 8);
+  --gap-small: calc(var(--baseline-unit) * 6);
+  --gap-medium: calc(var(--baseline-unit) * 10);
+  --gap-large: calc(var(--baseline-unit) * 16);
+  --gap-xlarge: calc(var(--baseline-unit) * 32);
+
+  --gap-grid: 0.5rem;
+  --gap-section: 4.625rem;
+  --gap-container: 1rem;
+
+  --cols: 12;
+
+  /* FONT SIZES */
+  --base-font-size: 16;
+
+  --font-size-micro: calc((14.45 / var(--base-font-size)) * 1rem); /* 12 - 14 */
+  --font-size-tiny: calc((18.8 / var(--base-font-size)) * 1rem); /* 16 */
+  --font-size-small: calc((21.15 / var(--base-font-size)) * 1rem); /* 18 */
+  --font-size-medium: calc((23.5 / var(--base-font-size)) * 1rem); /* 20 */
+  --font-size-xmedium: calc((32.5 / var(--base-font-size)) * 1rem); /* 28 */
+  --font-size-large: calc((42 / var(--base-font-size)) * 1rem); /* 36? 32? */
+  --font-size-xlarge: calc((48 / var(--base-font-size)) * 1rem); /* 42 - 52 */
+  --font-size-huge: calc((65 / var(--base-font-size)) * 1rem); /* 56 - 64 */
+
+  /* CONTAINER */
+  --container-margin-left: auto;
+  --container-margin-right: auto;
+  --container-padding-left: var(--gap-container);
+  --container-padding-right: var(--gap-container);
+  --container-width: 100%;
+
+  /* SECTION */
+  --section-padding-top: var(--gap-section);
+
+  /* FLEX GRID */
+  --flex-grid-display: flex;
+  --flex-grid-flex-wrap: wrap;
+  --flex-grid-margin-left: calc(var(--gap-grid) / 2 * -1);
+  --flex-grid-margin-right: calc(var(--gap-grid) / 2 * -1);
+  --flex-grid-width: calc(100% + var(--gap-grid));
+
+  /* FLEX COLUMN */
+  --flex-column-flex-grow: 0;
+  --flex-column-padding-left: calc(var(--gap-grid) / 2);
+  --flex-column-padding-right: calc(var(--gap-grid) / 2);
+
+  --flex-column-col-flex-basis: calc((100 / var(--flex-cols, 12)) * var(--flex-col, 12));
+  --flex-column-col-max-width: calc((100 / var(--flex-cols, 12)) * var(--flex-col, 12));
+
+  /* FLEX COLUMN OFFSET */
+  --flex-column-offset-margin-left: calc((100 / var(--flex-cols, 12)) * var(--flex-offset, 0));
+
+  /* BREAKPOINTS */
+  --bp-tiny: 576px;
+  --bp-small: 768px;
+  --bp-medium: 992px;
+  --bp-large: 1280px;
+  --bp-xlarge: 1440px;
+  --bp-huge: 1680px;
+}
+
+@mixin container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gap-container);
+  padding-right: var(--gap-container);
+  width: 100%;
+}
+
+@mixin section {
+  padding-top: var(--gap-section);
+}
+
+@mixin flex-grid($align: flex-start, $justify: flex-start) {
+  align-items: $align;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: $justify;
+  margin-left: calc(var(--gap-grid) / 2 * -1);
+  margin-right: calc(var(--gap-grid) / 2 * -1);
+  width: calc(100% + var(--gap-grid));
+}
+
+@mixin flex-column($col: 12, $cols: 12) {
+  flex-basis: calc(100% / $cols * $col);
+  flex-grow: 0;
+  max-width: calc(100% / $cols * $col);
+  padding-left: calc(var(--gap-grid) / 2);
+  padding-right: calc(var(--gap-grid) / 2);
+}
+
+@mixin flex-column-offset($offset: 0, $cols: 12) {
+  margin-left: calc(100% / $cols * $offset);
+}

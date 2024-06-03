@@ -30,6 +30,7 @@ export const WORDPRESS_GET_PAGE_BY_SLUG =
             }
             text
             title
+            url
           }
         }
         ... on AcfPageHeader {

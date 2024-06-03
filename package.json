@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "prebuild": "node generate-scss-imports.js",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "next dev",
+    "start": "next start"
   },
   "dependencies": {
     "@apollo/client": "^3.10.4",
@@ -23,8 +23,16 @@
     "@types/node": "^20",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18",
+    "css-loader": "^7.1.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
-    "typescript": "^5"
+    "null-loader": "^4.0.1",
+    "sass": "^1.77.4",
+    "sass-loader": "^14.2.1",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
   }
 }

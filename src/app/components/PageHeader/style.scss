@@ -1,0 +1,23 @@
+.pageheader-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--gap-container);
+    padding-right: var(--gap-container);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.pageheader-title {
+    font-size: var(--font-size-huge);
+    font-family: var(--fonts-primary);
+    color: var(--text-dark);
+    text-align: center;
+    position: absolute;
+  }
+  
+.pageheader-media {
+    border-radius: 10px;
+    max-height: 40vh;
+    width: 100%;
+}

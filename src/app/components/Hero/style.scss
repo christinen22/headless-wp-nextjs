@@ -1,0 +1,37 @@
+.hero-section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    @include section;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .hero-section h1 {
+    font-size: var(--font-size-huge);
+    font-family: var(--fonts-secondary);
+    margin-bottom: var(--gap-medium);
+    font-weight: 400;
+  }
+  
+  .hero-section p {
+    font-size: var(--font-size-medium);
+    font-family: var(--fonts-primary);
+    margin-bottom: var(--gap-large);
+  }
+  
+  
+  .container {
+    @include container;
+  }
+  

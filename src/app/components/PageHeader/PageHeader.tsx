@@ -8,10 +8,14 @@ const PageHeader: React.FC<PageHeaderBlockProps> = ({ pageHeader }) => {
   const { image, title } = pageHeader;
   return (
     <div className="section">
-      <div className="container">
-        <h1>{title}</h1>
+      <div className="pageheader-container">
+        <h1 className="pageheader-title">{title}</h1>
         {image && (
-          <img src={image.node.mediaItemUrl} alt={title} className="media" />
+          <img
+            src={image.node.mediaItemUrl}
+            alt={title}
+            className="media pageheader-media"
+          />
         )}
       </div>
     </div>
