@@ -43,6 +43,20 @@ export const WORDPRESS_GET_PAGE_BY_SLUG =
             title
           }
         }
+        ... on AcfCards {
+          cards {
+            repeater {
+              title
+              description
+              image {
+                node {
+                  mediaItemUrl
+                }
+              }
+              link
+            }
+          }
+        }
       }
     }
   }

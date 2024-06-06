@@ -27,18 +27,30 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="site-header">
-      <button className="menu-toggle" onClick={toggleMenu}>
-        ☰
-      </button>
-      <nav className="main-navigation">
-        <ul className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
-          {menus.menus.nodes[0].menuItems.nodes.map((menuItem) => (
-            <li key={menuItem.path} className="menu-item">
-              <a href={menuItem.path}>{menuItem.label}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div className="top-bar">
+        <div className="top-bar-right">
+          <a href="/">Contact Us</a>
+          <a href="https://instagram.com">Instagram</a>
+          <a href="https://linkedin.com">LinkedIn</a>
+        </div>
+      </div>
+      <div className="main-header">
+        <div className="logo">
+          <a href="/">Company</a>
+        </div>
+        <button className="menu-toggle" onClick={toggleMenu}>
+          ☰
+        </button>
+        <nav className={`main-navigation ${isMenuOpen ? "active" : ""}`}>
+          <ul className="nav-menu">
+            {menus.menus.nodes[0].menuItems.nodes.map((menuItem) => (
+              <li key={menuItem.path} className="menu-item">
+                <a href={menuItem.path}>{menuItem.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };

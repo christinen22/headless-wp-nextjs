@@ -4,10 +4,12 @@ import type {
   HeroBlock,
   MediaWithTextBlock,
   PageHeaderBlock,
+  CardsBlock,
 } from "../lib/types";
 import Hero from "./Hero/Hero";
 import MediaWithText from "./MediaWithText/MediaWithText";
 import PageHeader from "./PageHeader/PageHeader";
+import Cards from "./Cards/Cards";
 
 interface BlockRendererProps {
   block: EditorBlock;
@@ -25,7 +27,8 @@ const BlockRenderer: React.FC<BlockRendererProps> = ({ block }) => {
       );
     case "AcfPageHeader":
       return <PageHeader pageHeader={(block as PageHeaderBlock).pageHeader} />;
-
+    case "AcfCards":
+      return <Cards cards={(block as CardsBlock).cards} />;
     default:
       return null;
   }

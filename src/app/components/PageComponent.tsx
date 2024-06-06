@@ -38,7 +38,7 @@ const PageComponent: React.FC<{ slug: string }> = ({ slug }) => {
 
   return (
     <div>
-      <h1>{page.title}</h1>
+      <h1 className="page-title">{page.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: page.content }} />
       {page.editorBlocks.map((block, index) => (
         <BlockRenderer key={index} block={block} />

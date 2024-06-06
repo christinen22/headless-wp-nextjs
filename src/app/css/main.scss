@@ -4,8 +4,10 @@
     font-family: var(--fonts-primary);
 }
 
-.entry-title {
+.page-title {
     text-align: center;
+    font-size: var(--font-size-large);
+    font-weight: 300;
 }
 
 h1, 

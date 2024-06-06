@@ -1,0 +1,38 @@
+.cards-section {
+    @include section;
+    @include flex-grid;
+
+    @media (min-width: 992px) {
+        flex-wrap: nowrap;
+        align-items: center;
+      }
+
+  }
+  
+  .card-content {
+    @include flex-column(12);
+    padding: var(--gap-small);
+    margin-bottom: var(--gap-medium);
+  
+  }
+  
+  .card-title {
+    font-size: var(--font-size-large);
+    font-family: var(--fonts-secondary);
+    color: var(--text-dark);
+    margin-bottom: var(--gap-small);
+  }
+  
+  .card-description {
+    font-size: var(--font-size-medium);
+    font-family: var(--fonts-primary);
+    color: var(--text-dark);
+    margin-bottom: var(--gap-medium);
+  }
+  
+
+  .card-image img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  

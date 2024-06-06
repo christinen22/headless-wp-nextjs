@@ -3,7 +3,7 @@ import { formatGQLQuery } from '../formatQuery';
 import { MenusData } from '../types';
 
 const FETCH_MENUS_QUERY = /* GraphQL */ `
-  query MyQuery3 {
+  query fetchMenus {
     menus(where: {location: PRIMARY}) {
       nodes {
         menuItems {

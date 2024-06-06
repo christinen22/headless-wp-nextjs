@@ -38,8 +38,24 @@ export interface PageHeaderBlock {
     }
 }
 
+export interface CardsBlock {
+    __typename: 'AcfCards';
+    cards: {
+        repeater: {
+            title: string;
+            link: string;
+            description: string;
+            image: {
+                node: {
+                    mediaItemUrl: string;
+                };
+            };
+        }[];
+    };
+}
+
 // Extend this type with more block types
-export type EditorBlock = HeroBlock | MediaWithTextBlock | PageHeaderBlock;
+export type EditorBlock = HeroBlock | MediaWithTextBlock | PageHeaderBlock | CardsBlock;
 
 export interface Page {
     title: string;
