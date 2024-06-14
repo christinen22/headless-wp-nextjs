@@ -9,7 +9,7 @@ const MediaWithText: React.FC<MediaWithTextBlockProps> = ({
 }) => {
   const { image, title, text, url } = mediaWithText;
   return (
-    <section className="media-text-section">
+    <section className="media-text-section fade-element">
       <div className="media-text-container">
         <div className="media-text-content">
           <h1 className="media-text-title">{title}</h1>

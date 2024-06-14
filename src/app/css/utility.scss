@@ -31,33 +31,6 @@
   --font-size-xlarge: calc((48 / var(--base-font-size)) * 1rem); /* 42 - 52 */
   --font-size-huge: calc((65 / var(--base-font-size)) * 1rem); /* 56 - 64 */
 
-  /* CONTAINER */
-  --container-margin-left: auto;
-  --container-margin-right: auto;
-  --container-padding-left: var(--gap-container);
-  --container-padding-right: var(--gap-container);
-  --container-width: 100%;
-
-  /* SECTION */
-  --section-padding-top: var(--gap-section);
-
-  /* FLEX GRID */
-  --flex-grid-display: flex;
-  --flex-grid-flex-wrap: wrap;
-  --flex-grid-margin-left: calc(var(--gap-grid) / 2 * -1);
-  --flex-grid-margin-right: calc(var(--gap-grid) / 2 * -1);
-  --flex-grid-width: calc(100% + var(--gap-grid));
-
-  /* FLEX COLUMN */
-  --flex-column-flex-grow: 0;
-  --flex-column-padding-left: calc(var(--gap-grid) / 2);
-  --flex-column-padding-right: calc(var(--gap-grid) / 2);
-
-  --flex-column-col-flex-basis: calc((100 / var(--flex-cols, 12)) * var(--flex-col, 12));
-  --flex-column-col-max-width: calc((100 / var(--flex-cols, 12)) * var(--flex-col, 12));
-
-  /* FLEX COLUMN OFFSET */
-  --flex-column-offset-margin-left: calc((100 / var(--flex-cols, 12)) * var(--flex-offset, 0));
 
   /* BREAKPOINTS */
   --bp-tiny: 576px;

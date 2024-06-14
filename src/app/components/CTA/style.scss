@@ -1,0 +1,36 @@
+.cta-section {
+    @include section;
+    background-color: var(--accent-color);
+    padding-bottom: var(--gap-section);
+}
+
+.cta-container {
+   
+}
+
+.cta-content {
+    display: flex;
+    padding-left: var(--gap-container);
+    padding-right: var(--gap-container);
+    flex-direction: column;
+
+}
+
+.cta-title {
+    @include flex-column (12);
+    font-size: var(--font-size-huge);
+    font-weight: 600;
+
+    
+}
+
+.cta-buttons {
+    @media (min-width: 992px) {
+        align-self: flex-end;
+        padding-top: var(--gap-container);
+      }
+}
+
+.button {
+    margin-right: 2rem;
+}

@@ -57,6 +57,19 @@ export const WORDPRESS_GET_PAGE_BY_SLUG =
             }
           }
         }
+        ... on AcfCta {
+          cta {
+            contact {
+              title
+              url
+            }
+            readMore {
+              title
+              url
+            }
+            title
+          }
+        }
       }
     }
   }

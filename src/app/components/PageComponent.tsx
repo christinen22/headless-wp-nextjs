@@ -3,7 +3,26 @@
 import { useEffect, useState } from "react";
 import { fetchPageBySlug } from "../lib/wordpress/fetchPageBySlug";
 import BlockRenderer from "./BlockRenderer";
-import type { Page } from "../lib/types";
+import { Page } from "../lib/types";
+import { useInView } from "react-intersection-observer";
+
+const FadeInSection: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
+  return (
+    <div
+      ref={ref}
+      className={`fade-element ${inView ? "fade-in" : "fade-out"}`}
+    >
+      {children}
+    </div>
+  );
+};
 
 const PageComponent: React.FC<{ slug: string }> = ({ slug }) => {
   const [page, setPage] = useState<Page | null>(null);
@@ -15,7 +34,6 @@ const PageComponent: React.FC<{ slug: string }> = ({ slug }) => {
       try {
         const pageData = await fetchPageBySlug(slug);
 
-        // Log each block's structure
         pageData.editorBlocks.forEach((block: any, index: number) => {});
 
         setPage(pageData);
@@ -39,9 +57,13 @@ const PageComponent: React.FC<{ slug: string }> = ({ slug }) => {
   return (
     <div>
       <h1 className="page-title">{page.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: page.content }} />
+      <FadeInSection>
+        <div dangerouslySetInnerHTML={{ __html: page.content }} />
+      </FadeInSection>
       {page.editorBlocks.map((block, index) => (
-        <BlockRenderer key={index} block={block} />
+        <FadeInSection key={index}>
+          <BlockRenderer key={index} block={block} />
+        </FadeInSection>
       ))}
     </div>
   );

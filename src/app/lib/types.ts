@@ -54,8 +54,23 @@ export interface CardsBlock {
     };
 }
 
+export interface CtaBlock {
+    __typename: 'AcfCta';
+    cta: {
+        contact: {
+            title: string;
+            url: string;
+        }
+        readMore: {
+            title: string;
+            url: string;
+        }
+        title: string;
+    }
+}
+
 // Extend this type with more block types
-export type EditorBlock = HeroBlock | MediaWithTextBlock | PageHeaderBlock | CardsBlock;
+export type EditorBlock = HeroBlock | MediaWithTextBlock | PageHeaderBlock | CardsBlock | CtaBlock;
 
 export interface Page {
     title: string;
