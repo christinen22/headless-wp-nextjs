@@ -5,7 +5,7 @@
 }
 
 .cta-container {
-   
+   //@include container;
 }
 
 .cta-content {
@@ -17,7 +17,7 @@
 }
 
 .cta-title {
-    @include flex-column (12);
+   // @include flex-column (12);
     font-size: var(--font-size-huge);
     font-weight: 600;
 

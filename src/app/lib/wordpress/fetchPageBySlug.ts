@@ -70,6 +70,25 @@ export const WORDPRESS_GET_PAGE_BY_SLUG =
             title
           }
         }
+        ... on AcfRichText {
+          richText {
+            content
+            title
+            link {
+              url
+              title
+            }
+          }
+        }
+        ... on AcfImage {
+          image {
+            image {
+              node {
+                mediaItemUrl
+              }
+            }
+          }
+        }
       }
     }
   }

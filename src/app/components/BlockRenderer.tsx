@@ -6,12 +6,16 @@ import type {
   PageHeaderBlock,
   CardsBlock,
   CtaBlock,
+  RichTextBlock,
+  ImageBlock,
 } from "../lib/types";
 import Hero from "./Hero/Hero";
 import MediaWithText from "./MediaWithText/MediaWithText";
 import PageHeader from "./PageHeader/PageHeader";
 import Cards from "./Cards/Cards";
 import CTA from "./CTA/CTA";
+import RichText from "./RichText/RichText";
+import Image from "./Image/Image";
 
 interface BlockRendererProps {
   block: EditorBlock;
@@ -33,6 +37,10 @@ const BlockRenderer: React.FC<BlockRendererProps> = ({ block }) => {
       return <Cards cards={(block as CardsBlock).cards} />;
     case "AcfCta":
       return <CTA cta={(block as CtaBlock).cta} />;
+    case "AcfRichText":
+      return <RichText richText={(block as RichTextBlock).richText} />;
+    case "AcfImage":
+      return <Image image={(block as ImageBlock).image} />;
     default:
       return null;
   }

@@ -1,0 +1,16 @@
+.rich-text-section {
+    @include section;
+}
+
+.rich-text-container {
+    @include container;
+    width: fit-content;
+}
+
+.rich-text-title {
+
+}
+
+.rich-text-content {
+
+}

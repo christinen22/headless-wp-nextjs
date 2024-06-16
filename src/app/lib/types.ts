@@ -69,8 +69,29 @@ export interface CtaBlock {
     }
 }
 
+export interface RichTextBlock {
+    __typename: 'AcfRichText';
+    richText: {
+        title: string;
+        content: string;
+        link: {
+            url: string;
+            title: string;
+        }
+    }
+}
+
+export interface ImageBlock {
+    __typename: 'AcfImage';
+    image: {
+        node: {
+            mediaItemUrl: string;
+        };
+    };
+}
+
 // Extend this type with more block types
-export type EditorBlock = HeroBlock | MediaWithTextBlock | PageHeaderBlock | CardsBlock | CtaBlock;
+export type EditorBlock = HeroBlock | MediaWithTextBlock | PageHeaderBlock | CardsBlock | CtaBlock | RichTextBlock | ImageBlock;
 
 export interface Page {
     title: string;

@@ -56,7 +56,6 @@ const PageComponent: React.FC<{ slug: string }> = ({ slug }) => {
 
   return (
     <div>
-      <h1 className="page-title">{page.title}</h1>
       <FadeInSection>
         <div dangerouslySetInnerHTML={{ __html: page.content }} />
       </FadeInSection>
