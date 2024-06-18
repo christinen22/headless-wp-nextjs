@@ -8,6 +8,7 @@ import type {
   CtaBlock,
   RichTextBlock,
   ImageBlock,
+  ImageGalleryBlock,
 } from "../lib/types";
 import Hero from "./Hero/Hero";
 import MediaWithText from "./MediaWithText/MediaWithText";
@@ -16,6 +17,7 @@ import Cards from "./Cards/Cards";
 import CTA from "./CTA/CTA";
 import RichText from "./RichText/RichText";
 import Image from "./Image/Image";
+import ImageGallery from "./ImageGallery/ImageGallery";
 
 interface BlockRendererProps {
   block: EditorBlock;
@@ -41,6 +43,12 @@ const BlockRenderer: React.FC<BlockRendererProps> = ({ block }) => {
       return <RichText richText={(block as RichTextBlock).richText} />;
     case "AcfImage":
       return <Image image={(block as ImageBlock).image} />;
+    case "AcfImageGallery":
+      return (
+        <ImageGallery
+          imageGallery={(block as ImageGalleryBlock).imageGallery}
+        />
+      );
     default:
       return null;
   }

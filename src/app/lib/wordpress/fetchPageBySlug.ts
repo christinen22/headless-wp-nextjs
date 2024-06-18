@@ -89,6 +89,17 @@ export const WORDPRESS_GET_PAGE_BY_SLUG =
             }
           }
         }
+        ... on AcfImageGallery {
+          imageGallery {
+            intro
+            title
+            images {
+              nodes {
+                mediaItemUrl
+              }
+            }
+          }
+        }
       }
     }
   }

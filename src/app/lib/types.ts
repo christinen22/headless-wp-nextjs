@@ -90,8 +90,22 @@ export interface ImageBlock {
     };
 }
 
+export interface ImageGalleryBlock {
+    __typename: 'AcfImageGallery';
+    imageGallery: {
+        intro: string;
+        title: string;
+        images: {
+            nodes: [{
+                mediaItemUrl: string;
+            }]
+        }
+    }
+}
+
+
 // Extend this type with more block types
-export type EditorBlock = HeroBlock | MediaWithTextBlock | PageHeaderBlock | CardsBlock | CtaBlock | RichTextBlock | ImageBlock;
+export type EditorBlock = HeroBlock | MediaWithTextBlock | PageHeaderBlock | CardsBlock | CtaBlock | RichTextBlock | ImageBlock | ImageGalleryBlock;
 
 export interface Page {
     title: string;
